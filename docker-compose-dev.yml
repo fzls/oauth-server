@@ -4,7 +4,7 @@ services:
     # receive http connection from client
     web:
         ports:
-            - 80:80
+            - 80
     # the workers
     php:
         build:
