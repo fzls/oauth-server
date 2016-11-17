@@ -77,9 +77,9 @@ services:
         restart: always
         # set master/slave
         environment:
-            - MYSQL_DATABASE=oauth
+            - MYSQL_DATABASE=tasklist
             - MYSQL_ROOT_PASSWORD=meow_meow_meow
-            - MYSQL_USER=oauth
+            - MYSQL_USER=tasklist
             - MYSQL_PASSWORD=meow_meow_meow
         networks:
             - back_tier

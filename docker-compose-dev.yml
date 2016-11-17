@@ -1,6 +1,10 @@
 # dev version, should be used with common config file
 version: '2'
 services:
+    # receive http connection from client
+    web:
+        ports:
+            - 80:80
     # the workers
     php:
         build:
