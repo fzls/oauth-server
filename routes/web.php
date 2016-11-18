@@ -23,3 +23,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/oauth/tokens/{token_id}',function (Request $request, $tokenId){
     return \Laravel\Passport\Token::query()->find($tokenId);
 });
+
+Route::get('/test',function (){
+    $test="hello";
+    echo $test;
+});

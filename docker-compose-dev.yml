@@ -5,6 +5,8 @@ services:
     web:
         ports:
             - 80
+        volumes:
+            - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     lb:
         ports:
             - 1936

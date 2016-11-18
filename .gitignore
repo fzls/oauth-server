@@ -4,6 +4,8 @@
 Homestead.yaml
 Homestead.json
 .env
+.env.local
+.env.docker
 /data
 #/storage
 #/bootstrap/cache

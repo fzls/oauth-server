@@ -2,7 +2,7 @@ FROM php:7-fpm
 MAINTAINER Chen Ji <fzls.zju@gmail.com>
 
 # use NetEase's debian:jessie mirror
-#COPY ./sources.list.jessie /etc/apt/sources.list
+COPY ./sources.list.jessie /etc/apt/sources.list
 
 # install tools
 RUN apt-get update && \
