@@ -3,11 +3,14 @@
 /public/storage
 Homestead.yaml
 Homestead.json
-.env
-.env.local
-.env.docker
 /data
 #/storage
 #/bootstrap/cache
 /bootstrap/compiled.php
 /.idea
+
+# sensitive file
+.env
+.env.local
+.env.docker
+docker-compose-custom.yml
