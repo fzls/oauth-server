@@ -24,12 +24,3 @@ Route::get('/home', 'HomeController@index');
 
 /*re: 添加scopes定义*/
 Route::get('/oauth/tokens/{token_id}', 'TokenInfoController@token_info');
-
-Route::get('/test', function () {
-    $user = User::with('roles.permissions')->find(1);
-    $permissions = [];
-    foreach ($user->roles as $role) {
-        $permissions = array_merge($permissions, $role->permissions->toArray());
-    }
-    return response()->json(collect($permissions)->unique());
-});
