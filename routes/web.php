@@ -38,6 +38,10 @@ Route::get('/oauth/tokens/{token_id}', function (Request $request, $tokenId) {
 });
 
 Route::get('/test', function () {
-    $test = "hello";
-    echo $test;
+    $user = User::with('roles.permissions')->find(1);
+    $permissions = [];
+    foreach ($user->roles as $role) {
+        $permissions = array_merge($permissions, $role->permissions->toArray());
+    }
+    return response()->json(collect($permissions)->unique());
 });
