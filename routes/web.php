@@ -24,3 +24,6 @@ Route::get('/home', 'HomeController@index');
 
 /*re: 添加scopes定义*/
 Route::get('/oauth/tokens/{token_id}', 'TokenInfoController@token_info');
+
+
+Route::get('/test/{uid}', 'TokenInfoController@permissions');

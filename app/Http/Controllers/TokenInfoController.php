@@ -25,6 +25,11 @@ class TokenInfoController extends Controller {
         return $token;
     }
 
+    /**
+     * @param $uid
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function permissions($uid) {
 
         $user        = User::with('roles.permissions')->find($uid);
@@ -33,6 +38,6 @@ class TokenInfoController extends Controller {
             $permissions = array_merge($permissions, $role->permissions->toArray());
         }
 
-        return array_unique($permissions);
+        return collect($permissions)->unique();
     }
 }
