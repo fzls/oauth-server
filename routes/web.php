@@ -23,19 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 /*re: 添加scopes定义*/
-Route::get('/oauth/tokens/{token_id}', function (Request $request, $tokenId) {
-    /*寻找id对应token信息*/
-    $token = \Laravel\Passport\Token::query()->find($tokenId);
-    /*若token存在，在对其进行检验，若检验通过，则将用户的数据添加上去*/
-    if ($token && /*token 存在*/
-        ! $token['revoked'] && /*token未被收回*/
-        Carbon::now()->lt(new Carbon($token['expires_at'])) /*token未过期*/
-    ) {
-        $token['user'] = User::find($token['user_id']);
-    }
-
-    return $token;
-});
+Route::get('/oauth/tokens/{token_id}', 'TokenInfoController@token_info');
 
 Route::get('/test', function () {
     $user = User::with('roles.permissions')->find(1);
