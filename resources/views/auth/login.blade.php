@@ -10,15 +10,15 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
+                        <div class="form-group{{ $errors->has('identifier') ? ' has-error' : '' }}">
+                            <label for="identifier" class="col-md-4 control-label">User Identifier</label>
+                            {{--RE: change email TO identifier--}}
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="identifier" type="text" placeholder="Login with username, email or phone" class="form-control" name="identifier" value="{{ old('identifier') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('identifier'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('identifier') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -28,7 +28,7 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" placeholder="Your password here" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">

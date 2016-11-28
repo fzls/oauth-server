@@ -27,3 +27,5 @@ Route::get('/oauth/tokens/{token_id}', 'TokenInfoController@token_info');
 
 
 Route::get('/test/{uid}', 'TokenInfoController@permissions');
+
+Route::get('/test', 'Auth\LoginController@credentials');
