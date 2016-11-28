@@ -7,13 +7,6 @@ use App\Http\Controllers\Controller;
 class ForgotPasswordWithPhoneSMSController extends Controller
 {
     /**
-     * 向用户展示通过手机验证码进行重置密码的表单
-     */
-    public function showResetByPhoneForm(){
-
-    }
-
-    /**
      * ajax，向用户手机发送验证码，并在password_resets中进行记录
      */
     public function sendSMSVerificationCode(){

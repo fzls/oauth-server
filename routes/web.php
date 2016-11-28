@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 /*手机验证码进行重置密码*/
-
+Route::post('/password/phone', 'Auth\ForgotPasswordWithPhoneSMSController@sendSMSVerificationCode');
 
 Route::get('/home', 'HomeController@index');
 
