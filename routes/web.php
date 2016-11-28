@@ -31,5 +31,5 @@ Route::get('/oauth/tokens/{token_id}', 'TokenInfoController@token_info');
 Route::get('/test/{uid}', 'TokenInfoController@permissions');
 
 Route::get('/test', function (\Illuminate\Http\Request $request){
-    print_r($request->identifier ?: $request->email ?: $request->phone?:'none');
+
 });
