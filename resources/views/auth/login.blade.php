@@ -14,7 +14,7 @@
                             <label for="identifier" class="col-md-4 control-label">User Identifier</label>
                             {{--RE: change email TO identifier--}}
                             <div class="col-md-6">
-                                <input id="identifier" type="text" placeholder="Login with username, email or phone" class="form-control" name="identifier" value="{{ old('identifier') }}" required autofocus>
+                                <input id="identifier" type="text" placeholder="原来可以用名字，邮箱或者手机号码来登陆呢" class="form-control" name="identifier" value="{{ old('identifier') }}" required autofocus>
 
                                 @if ($errors->has('identifier'))
                                     <span class="help-block">
@@ -28,7 +28,7 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" placeholder="Your password here" class="form-control" name="password" required>
+                                <input id="password" type="password" placeholder="主人様，偷偷地告诉我你的小金库密码吧QAQ" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
