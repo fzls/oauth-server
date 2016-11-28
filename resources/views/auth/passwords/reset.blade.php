@@ -13,15 +13,15 @@
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="form-group{{ $errors->has('identifier') ? ' has-error' : '' }}">
+                            <label for="identifier" class="col-md-4 control-label">Identifier</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
+                                <input id="identifier" type="text" placeholder="主人绑定的手机或者邮箱哦，用户名什么的当然也可以啦" class="form-control" name="identifier" value="{{ $identifier or old('identifier') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('identifier'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('identifier') }}</strong>
                                     </span>
                                 @endif
                             </div>

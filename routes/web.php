@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+/*手机验证码进行重置密码*/
+
 
 Route::get('/home', 'HomeController@index');
 
@@ -28,4 +30,6 @@ Route::get('/oauth/tokens/{token_id}', 'TokenInfoController@token_info');
 
 Route::get('/test/{uid}', 'TokenInfoController@permissions');
 
-Route::get('/test', 'Auth\LoginController@credentials');
+Route::get('/test', function (\Illuminate\Http\Request $request){
+    print_r($request->identifier ?: $request->email ?: $request->phone?:'none');
+});
