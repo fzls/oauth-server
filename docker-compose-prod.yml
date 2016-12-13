@@ -5,8 +5,8 @@ services:
     # receive http connection from client
     web:
         ports:
-            - 9898:80
-            - 9899:443
+            - 9899:80
+            - 9898:443
         volumes:
             - /etc/letsencrypt:/etc/letsencrypt
             - /etc/ssl/certs/dhparam.pem:/etc/ssl/certs/dhparam.pem
