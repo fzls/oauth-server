@@ -30,6 +30,17 @@ Route::get('/oauth/tokens/{token_id}', 'TokenInfoController@token_info');
 
 Route::get('/test/{uid}', 'TokenInfoController@permissions');
 
-Route::get('/test', function (\Illuminate\Http\Request $request){
+Route::get('/test', function (\Illuminate\Http\Request $request) {
+    $title   = $request->input('title');
+    $content = $request->input('content');
 
+    Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) {
+
+        $message->from('me@gmail.com', 'Christian Nwamba');
+
+        $message->to('fzls.zju@gmail.com');
+
+    });
+
+    return response()->json(['message' => 'Request completed']);
 });
